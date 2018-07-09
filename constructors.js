@@ -36,11 +36,68 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-// ????????
-// ????????
-// ????????
 
 
+//------------------------------Prototype Method-------------------------------------------
+// function Dog(obj){
+//   this.status = 'normal'
+//   this.color = 'black'
+//   if(obj) {
+//     if(obj.hasOwnProperty('hungry')) {
+//       this.hungry = obj.hungry
+//     }else{
+//       this.hungry = true
+//     }
+//   }
+// }
+// function Human(obj){
+//   this.pet = function(dog){
+//     dog.status = 'happy'
+//   }
+//   this.feed = function(dog){
+//     dog.hungry = false
+//   }
+//   if(obj){
+//     if(obj.hasOwnProperty('cool')) {
+//       this.cool = obj.cool
+//     }else{
+//       this.cool = false
+//     }
+//   }else{
+//     this.cool = false
+//   }
+// }
+//----------------------------------Class Method-----------------------------------------
+class Dog {
+  constructor(obj){
+    this.status = 'normal'
+    this.color = 'black'
+    this.hungry = true
+  }
+}
+class Human {
+  constructor(obj){
+    this.cool = true
+  }
+  pet(obj){
+    obj.status = 'happy'
+  }
+  feed(obj){
+    obj.hungry = false
+  }
+}
+var sadie = new Dog()
+sadie.hungry = false
+
+var moonshine = new Dog()
+moonshine.hungry = true
+
+var atticus = new Dog()
+
+var mason = new Human()
+mason.cool = false
+
+var julia = new Human()
 //        __
 //   ____/ /___  ____ ______
 //  / __  / __ \/ __ `/ ___/
@@ -48,16 +105,16 @@ function expect(target) {
 // \__,_/\____/\__, /____/
 //            /____/
 
-var sadie = new Dog({
-  color: "black",
-  hungry: false
-});
+// var sadie = new Dog({
+//   color: "black",
+//   hungry: false
+// });
 
-var moonshine = new Dog({
-  color: "blue-red"
-});
+// var moonshine = new Dog({
+//   color: "blue-red"
+// });
 
-var atticus = new Dog();
+// var atticus = new Dog();
 
 
 //     __
@@ -66,11 +123,11 @@ var atticus = new Dog();
 //  / / / / /_/ / / / / / / /_/ / / / (__  )
 // /_/ /_/\__,_/_/ /_/ /_/\__,_/_/ /_/____/
 
-var mason = new Human();
+// var mason = new Human();
 
-var julia = new Human({
-  cool: true
-});
+// var julia = new Human({
+//   cool: true
+// });
 
 
 //                     __           __  __    _                             __
