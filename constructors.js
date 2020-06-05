@@ -42,6 +42,8 @@ function expect(target) {
 function Dog(obj){
   this.status = 'normal'
   this.color = 'black'
+  //this.color = obj && obj.hasOwnProperty('color') ? obj.color : 'black' || 'black'
+  //this.hungry = obj && obj.hasOwnProperty('hungry') ? obj.hungry : true || true
   if(obj) {
     if(obj.hasOwnProperty('hungry')) {
       this.hungry = obj.hungry
@@ -51,6 +53,7 @@ function Dog(obj){
   }
 }
 function Human(obj){
+  // this.cool = obj && obj.hasOwnProperty('cool') ? obj.cool : false || false 
   this.pet = function(dog){
     dog.status = 'happy'
   }
